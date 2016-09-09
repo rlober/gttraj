@@ -73,15 +73,15 @@ gt-traj
 )
 
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include
-        DESTINATION ${CMAKE_INSTALL_PREFIX}
-        FILES_MATCHING PATTERN *.h*)
+install(FILES Path.h Trajectory.h
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
 
 install(TARGETS gt-traj
         EXPORT GtTraj
         DESTINATION lib)
 
 set_property(GLOBAL APPEND PROPERTY ${VARS_PREFIX}_TARGETS gt-traj)
+set_property(GLOBAL APPEND PROPERTY PACKAGE_${VARS_PREFIX}_INCLUDEDIR ${CMAKE_INSTALL_PREFIX}/include)
 
 
 
