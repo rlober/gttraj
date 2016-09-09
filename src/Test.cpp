@@ -2,7 +2,9 @@
 #include <cstdlib>
 #include <list>
 #include <Eigen/Core>
-#include "Trajectory.h"
+#include "gttraj/Trajectory.h"
+
+using namespace gttraj;
 
 int numTests = 0;
 int numTestsFailed = 0;

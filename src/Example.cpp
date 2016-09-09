@@ -39,11 +39,12 @@
 #include <iostream>
 #include <cstdio>
 #include <Eigen/Core>
-#include "Trajectory.h"
-#include "Path.h"
+#include "gttraj/Trajectory.h"
+#include "gttraj/Path.h"
 
 using namespace std;
 using namespace Eigen;
+using namespace gttraj;
 
 int main() {
 	list<VectorXd> waypoints;
@@ -88,5 +89,3 @@ int main() {
 	string s;
 	cin >> s;
 }
-
-

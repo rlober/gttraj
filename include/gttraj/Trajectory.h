@@ -39,14 +39,17 @@
 #pragma once
 
 #include <Eigen/Core>
-#include "Path.h"
+#include "gttraj/Path.h"
+
+namespace gttraj
+{
 
 class Trajectory
 {
 public:
 	// Generates a time-optimal trajectory
 	Trajectory(const Path &path, const Eigen::VectorXd &maxVelocity, const Eigen::VectorXd &maxAcceleration, double timeStep = 0.001);
-	
+
 	~Trajectory(void);
 
 	// Call this method after constructing the object to make sure the trajectory generation succeeded without errors.
@@ -86,9 +89,9 @@ private:
 	double getVelocityMaxPathVelocity(double pathPos) const;
 	double getAccelerationMaxPathVelocityDeriv(double pathPos);
 	double getVelocityMaxPathVelocityDeriv(double pathPos);
-	
+
 	std::list<TrajectoryStep>::const_iterator getTrajectorySegment(double time) const;
-	
+
 	Path path;
 	Eigen::VectorXd maxVelocity;
 	Eigen::VectorXd maxAcceleration;
@@ -103,3 +106,5 @@ private:
 	mutable double cachedTime;
 	mutable std::list<TrajectoryStep>::const_iterator cachedTrajectorySegment;
 };
+
+}

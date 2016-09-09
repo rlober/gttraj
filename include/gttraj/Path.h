@@ -40,7 +40,9 @@
 
 #include <list>
 #include <Eigen/Core>
-
+namespace gttraj
+{
+	
 class PathSegment
 {
 public:
@@ -48,7 +50,7 @@ public:
 		length(length)
 	{
 	}
-	
+
 	virtual ~PathSegment() {}
 
 	double getLength() const {
@@ -85,3 +87,5 @@ private:
 	std::list<std::pair<double, bool> > switchingPoints;
 	std::list<PathSegment*> pathSegments;
 };
+
+}

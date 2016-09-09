@@ -36,7 +36,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "Path.h"
+#include "gttraj/Path.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -46,6 +46,7 @@
 
 using namespace std;
 using namespace Eigen;
+using namespace gttraj;
 
 
 class LinearPathSegment : public PathSegment
@@ -192,7 +193,7 @@ Path::Path(const list<VectorXd> &path, double maxDeviation) :
 				pathSegments.push_back(new LinearPathSegment(startConfig, endConfig));
 			}
 			pathSegments.push_back(blendSegment);
-			
+
 			startConfig = blendSegment->getConfig(blendSegment->getLength());
 		}
 		else {
