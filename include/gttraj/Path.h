@@ -42,7 +42,7 @@
 #include <Eigen/Core>
 namespace gttraj
 {
-	
+
 class PathSegment
 {
 public:
@@ -72,6 +72,7 @@ protected:
 class Path
 {
 public:
+	Path(){}
 	Path(const std::list<Eigen::VectorXd> &path, double maxDeviation = 0.0);
 	Path(const Path &path);
 	~Path();

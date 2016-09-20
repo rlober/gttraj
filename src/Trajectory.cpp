@@ -51,6 +51,12 @@ static double squared(double d) {
 	return d * d;
 }
 
+Trajectory::Trajectory()
+: timeStep(0.001)
+{
+	// Do nothing else;
+}
+
 Trajectory::Trajectory(const Path &path, const VectorXd &maxVelocity, const VectorXd &maxAcceleration, double timeStep) :
 	path(path),
 	maxVelocity(maxVelocity),
@@ -90,7 +96,9 @@ Trajectory::Trajectory(const Path &path, const VectorXd &maxVelocity, const Vect
 	}
 }
 
-Trajectory::~Trajectory(void) {
+Trajectory::~Trajectory()
+{
+
 }
 
 void Trajectory::outputPhasePlaneTrajectory() const {
